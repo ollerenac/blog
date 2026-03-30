@@ -1,50 +1,91 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+SYNC IMPACT REPORT
+==================
+Version change: (none) → 1.0.0
+Modified principles: N/A — initial ratification, all placeholders replaced
+Added sections: Core Principles (I–V), Deployment Standards, Development Workflow, Governance
+Removed sections: None
+Templates checked:
+  ✅ .specify/templates/plan-template.md — Constitution Check gate aligns with principles
+  ✅ .specify/templates/spec-template.md — No constitution-specific constraints; compatible
+  ✅ .specify/templates/tasks-template.md — Phase structure compatible with SDD principle
+  ℹ️  .specify/templates/commands/ — Directory not present; .claude/commands/ used instead (no changes needed)
+Deferred TODOs: None
+-->
+
+# Learning Blog Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Content-First
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+Every decision MUST serve the creation and publication of blog content.
+No feature, plugin, or configuration is added unless it directly enables
+writing, publishing, or reading posts. UI enhancements and tooling are
+secondary to the writing workflow.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### II. Static & Simple
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+The site MUST remain a static Jekyll site deployable via GitHub Actions
+to GitHub Pages with no server-side runtime. Dependencies MUST be kept
+to an absolute minimum (minima theme, standard GitHub Actions). YAGNI
+applies strictly — no feature is built speculatively.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### III. Spec-Driven Development
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+Every feature MUST follow the full spec-kit workflow before any
+implementation:
+Constitution → Spec (`/speckit.specify`) → Plan (`/speckit.plan`) →
+Tasks (`/speckit.tasks`) → Implement (`/speckit.implement`).
+No code is written without an approved spec. This principle is both the
+project's methodology and its subject matter.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### IV. Bilingual by Convention
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+Content MUST declare its language via the `lang` front-matter field
+(`es`, `en`, or `bilingual`). Bilingual posts MUST present Spanish first,
+followed by English after a `---` divider. Language filtering MUST be
+achievable through tags (`lang-es`, `lang-en`) without requiring an i18n
+plugin.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### V. Open & Transparent
+
+The learning process MUST be documented openly. Comments MUST be enabled
+via Giscus (GitHub Discussions). The conversation log at
+`docs/conversation_log/important_conversation_log.md` MUST be kept
+up-to-date with key concepts, decisions, and definitions from each
+working session.
+
+## Deployment Standards
+
+- GitHub Actions MUST be used for all deployments (never the legacy
+  branch-based Pages method).
+- The `main` branch is the single source of truth for production content.
+- The site MUST be accessible at `ollerenac.github.io/blog`.
+- Jekyll build MUST succeed with zero warnings before any merge to `main`.
+
+## Development Workflow
+
+- All work MUST be tracked via spec-kit specs in `specs/` and tasks in
+  the corresponding `tasks.md`.
+- Design documents MUST be saved to `docs/plans/` before implementation
+  begins.
+- The conversation log MUST be updated at the end of each session with
+  any new concepts or decisions introduced.
+- Commits MUST reference the relevant spec or task where applicable.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes all other project guidelines. Any amendment
+requires:
+1. A documented reason for the change.
+2. A version bump following semantic versioning:
+   - MAJOR: removal or redefinition of a principle.
+   - MINOR: new principle or section added.
+   - PATCH: clarification or wording fix.
+3. An updated `LAST_AMENDED_DATE`.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+All specs and plans MUST verify compliance with this constitution before
+proceeding to implementation (Constitution Check gate in plan.md).
+
+**Version**: 1.0.0 | **Ratified**: 2026-03-30 | **Last Amended**: 2026-03-30

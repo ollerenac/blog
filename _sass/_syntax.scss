@@ -1,0 +1,93 @@
+// ============================================================
+// Syntax Highlighting — Dark Palette (Rouge overrides)
+// ============================================================
+
+.highlight {
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: var(--border-radius);
+  margin: var(--space-lg) 0;
+  overflow-x: auto;
+
+  pre {
+    margin: 0;
+    padding: var(--space-lg);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    background: transparent;
+    border: none;
+  }
+
+  code {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: var(--text-primary);
+    font-size: inherit;
+  }
+}
+
+// Language label
+figure.highlight {
+  position: relative;
+
+  &[data-lang]::before {
+    content: attr(data-lang);
+    position: absolute;
+    top: 0;
+    right: var(--space-md);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: var(--space-xs) 0;
+  }
+}
+
+// ---- Token colors (dark palette) ----
+
+.highlight {
+  // Comments
+  .c, .c1, .c2, .cm, .cs, .cp  { color: #546e7a; font-style: italic; }
+
+  // Keywords, operators
+  .k, .kd, .kn, .kp, .kr, .kt  { color: #c792ea; }
+  .o, .ow                        { color: #89ddff; }
+
+  // Strings
+  .s, .s1, .s2, .sb, .sc, .sd,
+  .se, .sh, .si, .sx, .sr, .ss  { color: #c3e88d; }
+
+  // Numbers, constants, booleans
+  .m, .mf, .mh, .mi, .mo,
+  .mb, .mf                       { color: #f78c6c; }
+  .kc                             { color: #f78c6c; }
+
+  // Names, functions, classes
+  .n, .na, .nb, .nc, .nd, .ni,
+  .ne, .nf, .nl, .nn, .no, .nt  { color: var(--text-primary); }
+  .nf, .fm                       { color: #82aaff; }
+  .nc, .nn                       { color: #ffcb6b; }
+
+  // Variables
+  .nv, .vc, .vg, .vi, .vm       { color: #f07178; }
+
+  // Punctuation
+  .p, .pi                        { color: #89ddff; }
+
+  // Tags (HTML/XML)
+  .nt                             { color: #f07178; }
+
+  // Attributes
+  .na                             { color: #ffcb6b; }
+
+  // Error
+  .err                            { color: #f07178; }
+
+  // Generic (diff)
+  .gd                             { color: #f07178; background: rgba(240, 113, 120, 0.1); }
+  .gi                             { color: #c3e88d; background: rgba(195, 232, 141, 0.1); }
+  .gh, .gp                        { color: var(--text-secondary); font-weight: bold; }
+}

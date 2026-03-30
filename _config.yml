@@ -1,0 +1,37 @@
+title: "Learning SDD"
+description: "A blog documenting the process of learning spec-driven development with Claude Code."
+baseurl: "/blog"
+url: "https://ollerenac.github.io"
+lang: en
+author: Oscar Llerena
+
+theme: minima
+
+# Markdown & syntax highlighting
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+# Exclude non-Jekyll files from build
+exclude:
+  - .specify/
+  - .claude/
+  - specs/
+  - docs/
+  - CLAUDE.md
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - twitter-creds.md
+  - "*.sh"
+
+# Permalinks
+permalink: /:year/:month/:day/:title/
+
+# Minima theme settings
+minima:
+  skin: dark

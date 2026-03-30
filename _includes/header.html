@@ -1,0 +1,14 @@
+<nav class="site-nav">
+  <a href="{{ '/research-sessions/' | relative_url }}"
+     {% if page.url contains 'research-sessions' %}class="active"{% endif %}>
+    sessions
+  </a>
+  <a href="{{ '/about/' | relative_url }}"
+     {% if page.url == '/about/' %}class="active"{% endif %}>
+    about
+  </a>
+  <a href="{{ '/faq/' | relative_url }}"
+     {% if page.url == '/faq/' %}class="active"{% endif %}>
+    faq
+  </a>
+</nav>

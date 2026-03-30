@@ -1,0 +1,37 @@
+{% comment %}
+  figure.html — Captioned figure with source attribution
+  Parameters:
+    src          (required) — image path or URL
+    alt          (required) — alt text
+    caption      (optional) — visible caption text
+    source_name  (optional) — attribution: author or publication name
+    source_url   (optional) — attribution: URL to original source
+{% endcomment %}
+
+<figure class="post-figure">
+  <img src="{{ include.src }}" alt="{{ include.alt }}">
+
+  {%- assign has_caption = include.caption | and: include.caption != '' -%}
+  {%- assign has_name = include.source_name | and: include.source_name != '' -%}
+  {%- assign has_url = include.source_url | and: include.source_url != '' -%}
+
+  {%- if has_caption or has_name or has_url -%}
+  <figcaption>
+    {%- if has_caption -%}
+      <span class="caption">{{ include.caption }}</span>
+    {%- endif -%}
+
+    <span class="attribution">
+      {%- if has_name and has_url -%}
+        Source: <a href="{{ include.source_url }}" target="_blank" rel="noopener">{{ include.source_name }}</a>
+      {%- elsif has_name -%}
+        Source: {{ include.source_name }}
+      {%- elsif has_url -%}
+        Source: <a href="{{ include.source_url }}" target="_blank" rel="noopener">{{ include.source_url }}</a>
+      {%- else -%}
+        Source: unknown
+      {%- endif -%}
+    </span>
+  </figcaption>
+  {%- endif -%}
+</figure>
