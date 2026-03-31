@@ -45,12 +45,23 @@ When you run `spec-kit init` in a project, you get:
 - `.specify/templates/` — spec, plan, tasks, and checklist templates
 - `.claude/commands/` — slash commands that drive the workflow in Claude Code
 
-{% include figure.html
-   src="/assets/images/speckit-workflow.png"
-   alt="Diagram showing the spec-kit workflow: Constitution → Spec → Plan → Tasks → Implement"
-   caption="The spec-kit workflow. Each phase gates the next."
-   source_name="spec-kit documentation"
-   source_url="https://github.com/github/spec-kit" %}
+<figure class="post-figure">
+<div style="font-family: var(--font-mono); font-size: 0.8rem; padding: 1.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; overflow-x: auto;">
+  <div style="display: flex; align-items: center; gap: 0; flex-wrap: nowrap; min-width: max-content;">
+    <div style="background: var(--bg); border: 1px solid var(--accent); color: var(--accent); padding: 0.4rem 0.8rem; border-radius: 4px; white-space: nowrap;">Constitution</div>
+    <div style="color: var(--text-secondary); padding: 0 0.4rem;">→</div>
+    <div style="background: var(--bg); border: 1px solid var(--border); color: var(--text-primary); padding: 0.4rem 0.8rem; border-radius: 4px; white-space: nowrap;">Spec</div>
+    <div style="color: var(--text-secondary); padding: 0 0.4rem;">→</div>
+    <div style="background: var(--bg); border: 1px solid var(--border); color: var(--text-primary); padding: 0.4rem 0.8rem; border-radius: 4px; white-space: nowrap;">Plan</div>
+    <div style="color: var(--text-secondary); padding: 0 0.4rem;">→</div>
+    <div style="background: var(--bg); border: 1px solid var(--border); color: var(--text-primary); padding: 0.4rem 0.8rem; border-radius: 4px; white-space: nowrap;">Tasks</div>
+    <div style="color: var(--text-secondary); padding: 0 0.4rem;">→</div>
+    <div style="background: var(--bg); border: 1px solid var(--border); color: var(--text-primary); padding: 0.4rem 0.8rem; border-radius: 4px; white-space: nowrap;">Implement</div>
+  </div>
+  <div style="margin-top: 0.8rem; color: var(--text-secondary); font-size: 0.72rem;">Each phase gates the next. No implementation without tasks. No tasks without a plan.</div>
+</div>
+<figcaption>The spec-kit workflow. Each phase gates the next. <span class="attribution">Source: <a href="https://github.com/github/spec-kit">spec-kit documentation</a></span></figcaption>
+</figure>
 
 The constitution is the first artifact. It defines principles that every spec, plan, and task must comply with. This blog's constitution has five principles — Content-First, Static & Simple, Spec-Driven Development, Bilingual by Convention, and Open & Transparent.
 
