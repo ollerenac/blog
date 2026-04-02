@@ -370,11 +370,13 @@ figure.post-figure {
   margin: var(--space-xl) 0;
   padding: var(--space-md) var(--space-lg);
   background: var(--surface);
-  border: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   border-left: 3px solid var(--accent);
   border-radius: var(--border-radius);
 
-  .problem-callout__label {
+  .problem-callout-label {
     display: block;
     font-family: var(--font-mono);
     font-size: 0.7rem;
@@ -388,6 +390,6 @@ figure.post-figure {
     margin: 0;
     color: var(--text-primary);
     font-size: var(--text-base);
-    line-height: 1.6;
+    line-height: 1.7;
   }
 }
