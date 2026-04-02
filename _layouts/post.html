@@ -14,6 +14,13 @@ layout: default
     </div>
   </header>
 
+  {%- if page.problem -%}
+  <div class="problem-callout">
+    <span class="problem-callout-label">Problem</span>
+    <p>{{ page.problem }}</p>
+  </div>
+  {%- endif -%}
+
   <div class="post-content">
     {{ content }}
   </div>
