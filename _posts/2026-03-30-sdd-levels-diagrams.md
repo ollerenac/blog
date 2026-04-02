@@ -6,6 +6,7 @@ lang: en
 tags: [sdd, lang-en, research-session]
 featured: false
 excerpt: "Spec-first, spec-anchored, spec-as-source — three ways AI agents and specifications can relate to each other. Three diagram options to visualize the difference."
+problem: "The term 'spec-driven development' is used loosely across tools and articles, making it hard to compare approaches. Without a shared vocabulary for the levels of SDD, evaluating tools like Kiro or spec-kit becomes guesswork."
 ---
 
 Birgitta Böckeler's [October 2025 article](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) on SDD tools identifies three distinct levels at which spec-driven development can operate. The difference between them is not about *having* a spec — it's about **what role the spec plays after the code exists**.

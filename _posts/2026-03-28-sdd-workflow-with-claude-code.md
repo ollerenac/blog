@@ -6,6 +6,7 @@ tags: [sdd, claude-code, spec-kit, lang-bilingual, research-session]
 lang: bilingual
 featured: false
 excerpt: "Una exploración del flujo completo de spec-kit: de la constitución a la implementación. / An exploration of the full spec-kit workflow: from constitution to implementation."
+problem: "Jumping directly into code with an AI agent produces working prototypes but leaves no record of why decisions were made. When requirements shift, there is nothing to update — context lives only in the chat history."
 ---
 
 ## Introducción

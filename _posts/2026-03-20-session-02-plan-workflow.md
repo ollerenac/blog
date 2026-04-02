@@ -6,6 +6,7 @@ tags: [spec-kit, sdd, lang-en, research-session]
 lang: en
 featured: false
 excerpt: "Documenting how /speckit.plan transforms a spec into a concrete implementation plan — with research, data models, contracts, and a design system."
+problem: "Writing a spec is not enough — translating it into a concrete build plan requires explicit design decisions about architecture, technology, and trade-offs that the spec itself does not capture."
 ---
 
 ## Session goal

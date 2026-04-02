@@ -6,6 +6,7 @@ tags: [spec-kit, sdd, lang-bilingual, research-session]
 lang: bilingual
 featured: false
 excerpt: "Cómo /speckit.tasks convierte un plan en pasos ejecutables — y por qué la organización por historia de usuario importa. / How /speckit.tasks converts a plan into executable steps — and why user story organization matters."
+problem: "A plan without granular tasks is too abstract for an AI agent to execute reliably. The gap between 'how to build it' and 'what to do next' causes drift and missed requirements."
 ---
 
 ## Generando tareas desde el plan

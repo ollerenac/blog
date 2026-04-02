@@ -6,6 +6,7 @@ tags: [sdd, spec-kit, claude-code, lang-en]
 lang: en
 featured: true
 excerpt: "This blog documents my process of learning spec-driven development — writing specs before code, using Claude Code as the implementation engine."
+problem: "Working on serious projects with Claude Code without a systematic methodology meant every session started from scratch. There was no persistent artifact — spec, decisions, rationale — carrying context between conversations."
 ---
 
 This blog is a learning log. Every post here documents something I explored, built, or understood while learning to implement **spec-driven development (SDD)** with Claude Code.

@@ -6,6 +6,7 @@ tags: [spec-kit, sdd, lang-es, research-session]
 lang: es
 featured: false
 excerpt: "Primera sesión documentando cómo crear una constitución de proyecto con spec-kit. La constitución es el primer artefacto — define los principios no negociables antes de cualquier código."
+problem: "Starting a project with Claude Code requires establishing ground rules that every future session must respect. Without a persistent constitution, each conversation can drift away from the project's principles."
 ---
 
 ## Objetivo de la sesión
