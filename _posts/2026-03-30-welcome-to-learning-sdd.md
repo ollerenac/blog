@@ -9,11 +9,13 @@ excerpt: "This blog documents my process of learning spec-driven development —
 problem: "Working on serious projects with Claude Code without a systematic methodology meant every session started from scratch. There was no persistent artifact — spec, decisions, rationale — carrying context between conversations."
 ---
 
-This blog is a learning log. Every post here documents something I explored, built, or understood while learning to implement **spec-driven development (SDD)** with Claude Code.
+I am pretty sure that many low-or-medium-expert-level Claude-Code users, until now, has not dominated the dynamics of developing long-run-bank-memory demanding projects.
 
 The premise is simple: before writing a single line of code, write a specification. The spec defines *what* the feature should do. Then a plan defines *how*. Then tasks break the plan into executable steps. Only then does implementation begin.
 
-This workflow is enforced by [spec-kit](https://github.com/github/spec-kit) — a scaffolding tool that installs the full SDD workflow into any project.
+The current trend is SDD. The guys from GitHub have created a framework for SDD implementation that can be locally installed and run via claude-code terminal command. This workflow is enforced by [spec-kit](https://github.com/github/spec-kit) — a scaffolding tool that installs the full SDD workflow into any project.
+
+This blog is a learning log. Every post here documents something I explored, built, or understood while learning to implement **spec-driven development (SDD)** with Claude Code.
 
 ## Why this blog exists
 
