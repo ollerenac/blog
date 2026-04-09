@@ -11,11 +11,29 @@ problem: "Working on serious projects with Claude Code without a systematic meth
 
 I am pretty sure that many low-or-medium-expert-level Claude-Code users, until now, has not dominated the dynamics of developing long-run-bank-memory demanding projects.
 
-The premise is simple: before writing a single line of code, write a specification. The spec defines *what* the feature should do. Then a plan defines *how*. Then tasks break the plan into executable steps. Only then does implementation begin.
+The premise is simple: before writing a single line of code, write a specification. A **constitution** defines the project's non-negotiable principles first. From there, a **spec** defines *what* a feature should do, a **plan** defines *how* to build it, **tasks** break it into executable steps — and only then does **implementation** begin.
+
+<figure class="post-figure">
+<div style="font-family: var(--font-mono); font-size: 0.8rem; padding: 1.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; overflow-x: auto;">
+  <div style="display: flex; align-items: center; gap: 0; flex-wrap: nowrap; min-width: max-content;">
+    <div style="background: var(--bg); border: 1px solid var(--accent); color: var(--accent); padding: 0.4rem 0.8rem; border-radius: 4px; white-space: nowrap;">Constitution</div>
+    <div style="color: var(--text-secondary); padding: 0 0.4rem;">→</div>
+    <div style="background: var(--bg); border: 1px solid var(--border); color: var(--text-primary); padding: 0.4rem 0.8rem; border-radius: 4px; white-space: nowrap;">Spec</div>
+    <div style="color: var(--text-secondary); padding: 0 0.4rem;">→</div>
+    <div style="background: var(--bg); border: 1px solid var(--border); color: var(--text-primary); padding: 0.4rem 0.8rem; border-radius: 4px; white-space: nowrap;">Plan</div>
+    <div style="color: var(--text-secondary); padding: 0 0.4rem;">→</div>
+    <div style="background: var(--bg); border: 1px solid var(--border); color: var(--text-primary); padding: 0.4rem 0.8rem; border-radius: 4px; white-space: nowrap;">Tasks</div>
+    <div style="color: var(--text-secondary); padding: 0 0.4rem;">→</div>
+    <div style="background: var(--bg); border: 1px solid var(--border); color: var(--text-primary); padding: 0.4rem 0.8rem; border-radius: 4px; white-space: nowrap;">Implement</div>
+  </div>
+  <div style="margin-top: 0.8rem; color: var(--text-secondary); font-size: 0.72rem;">Each phase gates the next. No implementation without tasks. No tasks without a plan.</div>
+</div>
+<figcaption>The spec-kit workflow. Each phase gates the next. <span class="attribution">Source: <a href="https://github.com/github/spec-kit">spec-kit documentation</a></span></figcaption>
+</figure>
 
 The current trend is SDD. The guys from GitHub have created a framework for SDD implementation that can be locally installed and run via claude-code terminal command. This workflow is enforced by [spec-kit](https://github.com/github/spec-kit) — a scaffolding tool that installs the full SDD workflow into any project.
 
-This blog is a learning log. Every post here documents something I explored, built, or understood while learning to implement **spec-driven development (SDD)** with Claude Code.
+This blog is a learning log. Every post here documents something I explored, built, or understood while learning to implement **spec-driven development (SDD)** with Claude Code. The two frameworks under study are [spec-kit](https://github.com/github/spec-kit) — GitHub's SDD scaffolding tool — and [GSD (Get Shit Done)](https://github.com/gsd-build/get-shit-done) — a more advanced context engineering framework built on the same principles.
 
 ## Why this blog exists
 
@@ -48,23 +66,6 @@ When you run `spec-kit init` in a project, you get:
 - `.specify/templates/` — spec, plan, tasks, and checklist templates
 - `.claude/commands/` — slash commands that drive the workflow in Claude Code
 
-<figure class="post-figure">
-<div style="font-family: var(--font-mono); font-size: 0.8rem; padding: 1.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; overflow-x: auto;">
-  <div style="display: flex; align-items: center; gap: 0; flex-wrap: nowrap; min-width: max-content;">
-    <div style="background: var(--bg); border: 1px solid var(--accent); color: var(--accent); padding: 0.4rem 0.8rem; border-radius: 4px; white-space: nowrap;">Constitution</div>
-    <div style="color: var(--text-secondary); padding: 0 0.4rem;">→</div>
-    <div style="background: var(--bg); border: 1px solid var(--border); color: var(--text-primary); padding: 0.4rem 0.8rem; border-radius: 4px; white-space: nowrap;">Spec</div>
-    <div style="color: var(--text-secondary); padding: 0 0.4rem;">→</div>
-    <div style="background: var(--bg); border: 1px solid var(--border); color: var(--text-primary); padding: 0.4rem 0.8rem; border-radius: 4px; white-space: nowrap;">Plan</div>
-    <div style="color: var(--text-secondary); padding: 0 0.4rem;">→</div>
-    <div style="background: var(--bg); border: 1px solid var(--border); color: var(--text-primary); padding: 0.4rem 0.8rem; border-radius: 4px; white-space: nowrap;">Tasks</div>
-    <div style="color: var(--text-secondary); padding: 0 0.4rem;">→</div>
-    <div style="background: var(--bg); border: 1px solid var(--border); color: var(--text-primary); padding: 0.4rem 0.8rem; border-radius: 4px; white-space: nowrap;">Implement</div>
-  </div>
-  <div style="margin-top: 0.8rem; color: var(--text-secondary); font-size: 0.72rem;">Each phase gates the next. No implementation without tasks. No tasks without a plan.</div>
-</div>
-<figcaption>The spec-kit workflow. Each phase gates the next. <span class="attribution">Source: <a href="https://github.com/github/spec-kit">spec-kit documentation</a></span></figcaption>
-</figure>
 
 The constitution is the first artifact. It defines principles that every spec, plan, and task must comply with. This blog's constitution has five principles — Content-First, Static & Simple, Spec-Driven Development, Bilingual by Convention, and Open & Transparent.
 
